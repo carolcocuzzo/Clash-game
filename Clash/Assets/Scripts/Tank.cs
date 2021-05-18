@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tank : MonoBehaviour
 {
     BehaviourTree behaviour;
+
     void Start()
     {
         behaviour = GetComponent<BehaviourTree>();
