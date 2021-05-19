@@ -29,18 +29,18 @@ public class Tank : MonoBehaviour
 
     private void Update()
     {
-        if(behaviour.health <= 0)
-        {
-            Die();
-        }
+        //if(behaviour.health <= 0)
+        //{
+        //    Die();
+        //}
 
      
     }
 
 
-    void Die()
-    {
-        animator.SetBool("dies", true);
-    }
+    //void Die()
+    //{
+    //    animator.SetBool("dies", true);
+    //}
 
 }
