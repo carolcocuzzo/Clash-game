@@ -29,7 +29,7 @@ public class BTMover : BTNode
             while (Vector3.Distance(alvo.transform.position, bt.transform.position) > bt.range)
             {
                 bt.transform.LookAt(alvo.transform);
-                bt.transform.Translate(bt.transform.forward * Time.deltaTime);
+                bt.transform.Translate(Vector3.forward * Time.deltaTime);
               
                 yield return null;
             }
