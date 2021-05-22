@@ -8,10 +8,20 @@ public class BehaviourTree : MonoBehaviour
 
     public string Enemy;
 
+
+    public Animator anim;
+
     BehaviourTree bt;
     public int health = 100;
     public int damage = 10;
     public int range = 10;
+
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public IEnumerator Execute()
     {
         while (true) {
@@ -27,8 +37,14 @@ public class BehaviourTree : MonoBehaviour
         {
             if (Vector3.Distance(enemy.transform.position, transform.position) < range)
             {
-               // bt = enemy.GetComponent<BehaviourTree>();
+                anim.SetTrigger("attacking");
+
+                if (enemy.GetComponent<Animator>() != null)
+                {
+                   // enemy.GetComponent<BehaviourTree>().anim.SetTrigger("getHit");
+                }
                 enemy.GetComponent<BehaviourTree>().health -= dano;
+               
             }
         }
     }

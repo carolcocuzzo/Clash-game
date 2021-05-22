@@ -8,13 +8,15 @@ public class Tank : MonoBehaviour
 
     public Animator animator;
 
+    Vector3 lasPos;
+
     void Start()
     {
 
         animator = GetComponent<Animator>();
-
-
         behaviour = GetComponent<BehaviourTree>();
+        lasPos = transform.position;
+
 
         BTSequence sequence1 = new BTSequence();
         sequence1.children.Add(new BTBuscarInimigo());
@@ -29,18 +31,28 @@ public class Tank : MonoBehaviour
 
     private void Update()
     {
-        //if(behaviour.health <= 0)
-        //{
-        //    Die();
-        //}
+        if(behaviour.health <= 0)
+        {
+            Die();
+        }
 
+        /*if (lasPos != transform.position)
+        {
+            animator.SetBool("walking", true);
+        }
+        else animator.SetBool("walking", false);
+
+
+        lasPos = transform.position;*/
      
     }
 
 
-    //void Die()
-    //{
-    //    animator.SetBool("dies", true);
-    //}
+    void Die()
+    {
+        animator.SetBool("die", true);
+        Collider.Destroy(gameObject);
+    }
+
 
 }
