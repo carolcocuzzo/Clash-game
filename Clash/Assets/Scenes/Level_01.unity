@@ -8331,6 +8331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 546261694, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3155058319838657794, guid: 176299a76ecfc7544b22a66fae200ac7, type: 3}
       propertyPath: m_Name
       value: Grunt
@@ -8399,6 +8403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFillImage: {fileID: 0}
+  speed: 2
 --- !u!1001 &232327311
 PrefabInstance:
   m_ObjectHideFlags: 0
