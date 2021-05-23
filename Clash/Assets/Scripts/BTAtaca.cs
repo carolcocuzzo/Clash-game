@@ -15,7 +15,7 @@ public class BTAtaca : BTNode
         {
             if (Vector3.Distance(enemy.transform.position, bt.transform.position) < bt.range)
             {
-                //while (enemy.health >= 10)
+                
                 while (enemy != null) 
                 {
                     bt.Atack(bt.damage);
