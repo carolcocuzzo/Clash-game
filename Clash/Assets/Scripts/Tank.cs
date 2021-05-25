@@ -33,7 +33,7 @@ public class Tank : MonoBehaviour
     {
         if(behaviour.health <= 0)
         {
-            Die();
+            StartCoroutine("Die");
         }
 
         /*if (lasPos != transform.position)
@@ -48,10 +48,12 @@ public class Tank : MonoBehaviour
     }
 
 
-    void Die()
+    public  IEnumerator Die()
     {
         animator.SetBool("die", true);
-        Collider.Destroy(gameObject);
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
     }
 
 

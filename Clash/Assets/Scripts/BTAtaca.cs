@@ -19,7 +19,7 @@ public class BTAtaca : BTNode
                 while (enemy != null) 
                 {
                     bt.Atack(bt.damage);
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.85f);
                     
                 }
             }

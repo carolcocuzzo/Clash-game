@@ -12,7 +12,9 @@ public class BehaviourTree : MonoBehaviour
     public Animator anim;
 
     BehaviourTree bt;
-    public int health = 100;
+
+    public float maxHealth = 100;
+    public float health = 100;
     public int damage = 10;
     public int range = 10;
 
@@ -35,14 +37,12 @@ public class BehaviourTree : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(Enemy);
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(enemy.transform.position, transform.position) < range)
+            if (Vector3.Distance(enemy.transform.position, transform.position) < range && health > 0 && 
+                enemy.GetComponent<BehaviourTree>().health > 0)
             {
                 anim.SetTrigger("attacking");
 
-                if (enemy.GetComponent<Animator>() != null)
-                {
-                   // enemy.GetComponent<BehaviourTree>().anim.SetTrigger("getHit");
-                }
+               
                 enemy.GetComponent<BehaviourTree>().health -= dano;
                
             }
