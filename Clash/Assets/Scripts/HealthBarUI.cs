@@ -7,7 +7,8 @@ public class HealthBarUI: MonoBehaviour
 {
 
     [SerializeField] private Image healthBarFillImage;
-    [SerializeField] private BehaviourTree bt; // Aqui vai colocar o script que tem o dano;
+    [SerializeField] private GameObject bt; 
+    private BehaviourTree personagem;
 
     [SerializeField]
     [Min(0.1f)]
@@ -15,13 +16,13 @@ public class HealthBarUI: MonoBehaviour
 
     private void Start()
     {
-        bt = GetComponentInParent<BehaviourTree>();
+        personagem = bt.GetComponent<BehaviourTree>();
     }
 
     private void LateUpate()
     {
 
-        float healthPercent = bt.maxHealth / bt.health; // Acessa o script e as funçoes 
+        float healthPercent = (float) personagem.health / personagem.maxHealth; // Acessa o script e as funçoes 
         healthBarFillImage.fillAmount = Mathf.Lerp(healthBarFillImage.fillAmount, healthPercent, Time.deltaTime * speed);
 
 

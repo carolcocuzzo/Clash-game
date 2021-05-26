@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Comandos : MonoBehaviour
 {
@@ -23,16 +24,21 @@ public class Comandos : MonoBehaviour
 
     float energyValue;
 
+    [SerializeField]
+    private TextMeshProUGUI textEnergy;
+
 
     private void Start()
     {
         StartCoroutine(RestoreEnergy());
+        
     }
 
     private void Update()
     {
         energyValue = energy;
         slider.value = energyValue;
+        textEnergy.text = energyValue.ToString();
         
     }
 
@@ -40,7 +46,8 @@ public class Comandos : MonoBehaviour
     {
         if (energy >= 3)
         {
-            Instantiate(tank, position, Quaternion.identity);
+            Instantiate(tank, new Vector3(0, 0, -9), Quaternion.identity);
+            
             energy -= 3;
         }
     }
@@ -49,7 +56,7 @@ public class Comandos : MonoBehaviour
     {
         if (energy >= 5)
         {
-            Instantiate(mago, position, Quaternion.identity);
+            Instantiate(mago, new Vector3(7, 0, -9), Quaternion.identity);
             energy -= 5;
         }
     }
@@ -59,7 +66,7 @@ public class Comandos : MonoBehaviour
     {
         if (energy >= 4)
         {
-            Instantiate(sup, position, Quaternion.identity);
+            Instantiate(sup, new Vector3(-7, 0 -9), Quaternion.identity);
             energy -= 4;
         }
     }

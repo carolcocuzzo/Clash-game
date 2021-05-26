@@ -8,14 +8,14 @@ public class Tank : MonoBehaviour
 
     public Animator animator;
 
-    Vector3 lasPos;
+    Vector3 lastPos;
 
     void Start()
     {
 
         animator = GetComponent<Animator>();
         behaviour = GetComponent<BehaviourTree>();
-        lasPos = transform.position;
+        lastPos = transform.position;
 
 
         BTSequence sequence1 = new BTSequence();
@@ -36,15 +36,17 @@ public class Tank : MonoBehaviour
             StartCoroutine("Die");
         }
 
-        /*if (lasPos != transform.position)
+ 
+     
+    }
+
+    private void LateUpdate()
+    {
+        if (IsMoving())
         {
             animator.SetBool("walking", true);
         }
         else animator.SetBool("walking", false);
-
-
-        lasPos = transform.position;*/
-     
     }
 
 
@@ -54,6 +56,14 @@ public class Tank : MonoBehaviour
         GetComponent<Collider>().enabled = false;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    public bool IsMoving()
+    {
+        var displacement = transform.position - lastPos;
+        lastPos = transform.position;
+        Debug.Log("Moving");
+        return displacement.magnitude > 0.001; // return true if char moved 1mm
     }
 
 

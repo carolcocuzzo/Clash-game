@@ -40,8 +40,11 @@ public class BehaviourTree : MonoBehaviour
             if (Vector3.Distance(enemy.transform.position, transform.position) < range && health > 0 && 
                 enemy.GetComponent<BehaviourTree>().health > 0)
             {
-                anim.SetTrigger("attacking");
-
+                if (anim != null)
+                {
+                    anim.SetTrigger("attacking");
+                    anim.SetBool("walking", false);
+                }
                
                 enemy.GetComponent<BehaviourTree>().health -= dano;
                
