@@ -12,6 +12,8 @@ public class Torre : MonoBehaviour
     [SerializeField]
     private GameObject telaDerrota;
 
+    public bool gameOver;
+
     void Start()
     {
         behaviour = GetComponent<BehaviourTree>();
@@ -22,6 +24,8 @@ public class Torre : MonoBehaviour
         behaviour.root = sequence1;
 
         StartCoroutine(behaviour.Execute());
+
+        gameOver = false;
     }
 
     private void Update()
@@ -29,6 +33,8 @@ public class Torre : MonoBehaviour
 
         if (behaviour.health <= 0)
         {
+            gameOver = true;
+
             if (gameObject.tag == "Vermelho")
             {
                 Vitoria();

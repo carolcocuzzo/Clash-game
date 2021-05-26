@@ -371,10 +371,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.62304205
+  m_Radius: 0.817548
   m_Height: 2.0197568
   m_Direction: 1
-  m_Center: {x: -0, y: 0.9501718, z: -0.02373704}
+  m_Center: {x: 0, y: 0.9501718, z: 0.08053706}
 --- !u!114 &2080087333419966076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,8 +389,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemy: Vermelho
   anim: {fileID: 0}
-  maxHealth: 100
-  health: 100
+  maxHealth: 150
+  health: 150
   damage: 10
   range: 2
 --- !u!114 &2080087333419966077
@@ -936,11 +936,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 378363785695864586, guid: cb5181e4293df2542b953ee58d4a16fe, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8579258
+      value: -0.85792583
       objectReference: {fileID: 0}
     - target: {fileID: 378363785695864586, guid: cb5181e4293df2542b953ee58d4a16fe, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.5137737
+      value: 0.5137736
       objectReference: {fileID: 0}
     - target: {fileID: 378363785788625794, guid: cb5181e4293df2542b953ee58d4a16fe, type: 3}
       propertyPath: m_Name

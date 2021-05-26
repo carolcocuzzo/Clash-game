@@ -27,6 +27,8 @@ public class Comandos : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textEnergy;
 
+    Torre game;
+
 
     private void Start()
     {
@@ -74,9 +76,13 @@ public class Comandos : MonoBehaviour
 
     public IEnumerator RestoreEnergy()
     {
-        while(energy <= 12)
+        while(energy < 13)
         {
             energy += 1;
+            if (energy > 12)
+            {
+                energy = 12;
+            }
             yield return new WaitForSeconds(2f);
         }
 
