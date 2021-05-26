@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         Time.timeScale = 1; // pausar jogo
-        //AudioListener.pause = false;
+        
     }
     
 
@@ -19,10 +19,6 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("QUIT");
         Application.Quit();
-    }   
-
+    }       
     
-    //public AudioMixer audioMixer;
-
-   
 }
