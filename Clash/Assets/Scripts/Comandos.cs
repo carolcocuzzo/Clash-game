@@ -35,6 +35,10 @@ public class Comandos : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textEnergy;
 
+
+    [SerializeField]
+    private GameObject telaPause;
+
     Torre game;
 
 
@@ -78,7 +82,7 @@ public class Comandos : MonoBehaviour
     {
         if (energy >= 4)
         {
-            Instantiate(sup, new Vector3(-7, 0 -9), Quaternion.identity);
+            Instantiate(sup, new Vector3(-7, 0.3f, -9), Quaternion.identity);
             supSpawn.Play();
             energy -= 4;
         }
@@ -97,6 +101,12 @@ public class Comandos : MonoBehaviour
             yield return new WaitForSeconds(2f);
         }
 
+    }
+
+    public void Despausar()
+    {
+        telaPause.SetActive(false);
+        Time.timeScale = 1;
     }
 
 
