@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject MenuPause;
     public GameObject ButtonPause;
+    public GameObject HUD; 
     public bool isPaused = false;   
 
 
@@ -26,8 +27,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             AudioListener.pause = false;
             ButtonPause.SetActive(true);
-            
-        }
+            HUD.SetActive(true);
+
+}
         else
         {
             MenuPause.SetActive(true);
@@ -35,6 +37,7 @@ public class GameManager : MonoBehaviour
             AudioListener.pause = true;
             Time.timeScale = 0;
             ButtonPause.SetActive(false);
+            HUD.SetActive(false); 
 
         }
 

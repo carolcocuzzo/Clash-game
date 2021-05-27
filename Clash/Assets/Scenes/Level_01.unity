@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -61836,6 +61836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MenuPause: {fileID: 1748624343}
   ButtonPause: {fileID: 604964496}
+  HUD: {fileID: 1951066724}
   isPaused: 0
 --- !u!1001 &1563362121
 PrefabInstance:
