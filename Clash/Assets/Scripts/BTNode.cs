@@ -11,4 +11,13 @@ public abstract class BTNode
     public List<BTNode> children = new List<BTNode>(); 
     
     public abstract IEnumerator Run(BehaviourTree bt);
+
+    public void Print()
+    {
+        string cor = "cyan";
+        if (status == Status.SUCCESS) cor = "green";
+        if (status == Status.FAILURE) cor = "orange";
+
+        Debug.Log("<color=" + cor + ">" + this.ToString() + ":" + status.ToString());
+    }
 }

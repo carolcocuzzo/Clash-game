@@ -9,6 +9,8 @@ public class BTMover : BTNode
     {
         status = Status.RUNNING;
 
+        Print();
+
         GameObject alvo = null;
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(bt.Enemy);
 
@@ -26,7 +28,7 @@ public class BTMover : BTNode
 
         if (alvo)
         {
-            while (Vector3.Distance(alvo.transform.position, bt.transform.position) > bt.range)
+            while ( alvo != null && Vector3.Distance(alvo.transform.position, bt.transform.position) > bt.range)
             {
                 bt.transform.LookAt(alvo.transform);
                 bt.transform.Translate(Vector3.forward * Time.deltaTime);
@@ -39,6 +41,8 @@ public class BTMover : BTNode
         }
 
         if (status == Status.RUNNING) status = Status.FAILURE;
+
+        Print();
 
     }
     

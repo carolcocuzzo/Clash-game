@@ -15,6 +15,7 @@ public class BTBuscarInimigo : BTNode
             status = Status.SUCCESS;
         }
 
+        Print();
 
         yield break;
 

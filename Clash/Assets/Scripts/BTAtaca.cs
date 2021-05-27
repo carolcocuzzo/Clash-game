@@ -13,7 +13,7 @@ public class BTAtaca : BTNode
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(bt.Enemy);
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(enemy.transform.position, bt.transform.position) < bt.range)
+            if (enemy!= null && Vector3.Distance(enemy.transform.position, bt.transform.position) < bt.range)
             {
                 
                 while (enemy != null) 
@@ -23,8 +23,11 @@ public class BTAtaca : BTNode
                     
                 }
             }
+            //else status = Status.SUCCESS; 
 
         }
+
+        Print();
 
         status = Status.SUCCESS; 
     }

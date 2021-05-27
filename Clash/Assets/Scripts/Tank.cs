@@ -62,7 +62,7 @@ public class Tank : MonoBehaviour
     {
         var displacement = transform.position - lastPos;
         lastPos = transform.position;
-        Debug.Log("Moving");
+        //Debug.Log("Moving");
         return displacement.magnitude > 0.001; // return true if char moved 1mm
     }
 

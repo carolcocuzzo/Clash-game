@@ -37,7 +37,7 @@ public class BehaviourTree : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(Enemy);
         foreach (GameObject enemy in enemies)
         {
-            if (Vector3.Distance(enemy.transform.position, transform.position) < range && health > 0 && 
+            if (enemy != null && Vector3.Distance(enemy.transform.position, transform.position) < range && health > 0 && 
                 enemy.GetComponent<BehaviourTree>().health > 0)
             {
                 if (anim != null)

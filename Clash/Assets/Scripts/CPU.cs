@@ -18,6 +18,8 @@ public class CPU : MonoBehaviour
     void Start()
     {
         StartCoroutine(EnemySpawn());
+        StartCoroutine(RestoreEnergy());
+        energy = 12;
     }
 
 
@@ -25,19 +27,19 @@ public class CPU : MonoBehaviour
     IEnumerator EnemySpawn()
     {
 
-        while (!game.gameOver) 
+        while (Time.timeScale == 1) 
         {
            int x = Random.Range(1, 4);
            
             if (x >= 1 && x < 2)
             {
-                InstantiateTank();
+                Instantiatetank();
             }
             else if (x >= 2 && x < 3)
             {
-                InstantiateMago();
+                Instantiatemago();
             }
-            else InstantiateSup();
+            else Instantiatesup();
 
             yield return new WaitForSeconds(2f);
         }
@@ -47,7 +49,7 @@ public class CPU : MonoBehaviour
 
 
 
-    private void InstantiateTank()
+    private void Instantiatetank()
     {
         if (energy >= 3)
         {
@@ -57,7 +59,7 @@ public class CPU : MonoBehaviour
         }
     }
 
-    private void InstantiateMago()
+    private void Instantiatemago()
     {
         if (energy >= 5)
         {
@@ -67,12 +69,26 @@ public class CPU : MonoBehaviour
     }
 
 
-    private void InstantiateSup()
+    private void Instantiatesup()
     {
         if (energy >= 4)
         {
             Instantiate(sup, new Vector3(-7, 0, 16), Quaternion.identity);
             energy -= 4;
         }
+    }
+
+    private IEnumerator RestoreEnergy()
+    {
+        while (energy < 13)
+        {
+            energy += 1;
+            if (energy > 12)
+            {
+                energy = 12;
+            }
+            yield return new WaitForSeconds(2f);
+        }
+
     }
 }

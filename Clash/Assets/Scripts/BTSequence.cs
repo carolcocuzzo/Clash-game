@@ -9,6 +9,8 @@ public class BTSequence : BTNode
         
        status = Status.RUNNING;
 
+        Print();
+
         foreach (BTNode node in children)
         {
             yield return bt.StartCoroutine(node.Run(bt));
@@ -21,5 +23,7 @@ public class BTSequence : BTNode
         }
 
         if (status == Status.RUNNING) status = Status.SUCCESS;
+
+        Print();
     }
 }
