@@ -11,6 +11,7 @@ public class CPU : MonoBehaviour
     [SerializeField]
     private GameObject sup;
 
+    [SerializeField]
     private int energy;
 
     Torre game;

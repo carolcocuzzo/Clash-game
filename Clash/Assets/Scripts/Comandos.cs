@@ -6,6 +6,14 @@ using TMPro;
 
 public class Comandos : MonoBehaviour
 {
+
+    [SerializeField]
+    private AudioSource tankSpawn;
+    [SerializeField]
+    private AudioSource magoSpawn;
+    [SerializeField]
+    private AudioSource supSpawn;
+
     [SerializeField]
     private Slider slider;
 
@@ -49,6 +57,7 @@ public class Comandos : MonoBehaviour
         if (energy >= 3)
         {
             Instantiate(tank, new Vector3(0, 0, -9), Quaternion.identity);
+            tankSpawn.Play();
             
             energy -= 3;
         }
@@ -59,6 +68,7 @@ public class Comandos : MonoBehaviour
         if (energy >= 5)
         {
             Instantiate(mago, new Vector3(7, 0, -9), Quaternion.identity);
+            magoSpawn.Play();
             energy -= 5;
         }
     }
@@ -69,6 +79,7 @@ public class Comandos : MonoBehaviour
         if (energy >= 4)
         {
             Instantiate(sup, new Vector3(-7, 0 -9), Quaternion.identity);
+            supSpawn.Play();
             energy -= 4;
         }
     }

@@ -12,6 +12,11 @@ public class Torre : MonoBehaviour
     [SerializeField]
     private GameObject telaDerrota;
 
+    [SerializeField]
+    private AudioSource vitoria;
+    [SerializeField]
+    private AudioSource derrota;
+
     public bool gameOver;
 
     void Start()
@@ -49,6 +54,7 @@ public class Torre : MonoBehaviour
     {
         hud.SetActive(false);
         telaVitoria.SetActive(true);
+        vitoria.Play();
         Time.timeScale = 0;
     }
 
@@ -56,6 +62,7 @@ public class Torre : MonoBehaviour
     {
         hud.SetActive(false);
         telaDerrota.SetActive(true);
+        derrota.Play();
         Time.timeScale = 0;
     }
 }
