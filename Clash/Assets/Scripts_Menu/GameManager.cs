@@ -4,19 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
-
  
 {
-
     public GameObject MenuPause;
     public GameObject ButtonPause;
     public GameObject HUD; 
-    public bool isPaused = false;   
-
+    public bool isPaused = false;  
 
     public void Pause()
-    {
-        
+    {       
 
 
         if (isPaused)
@@ -29,7 +25,7 @@ public class GameManager : MonoBehaviour
             ButtonPause.SetActive(true);
             HUD.SetActive(true);
 
-}
+        }
         else
         {
             MenuPause.SetActive(true);
@@ -39,9 +35,7 @@ public class GameManager : MonoBehaviour
             ButtonPause.SetActive(false);
             HUD.SetActive(false); 
 
-        }
-
-        
+        }        
 
     }
 
